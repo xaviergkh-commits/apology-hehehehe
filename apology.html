@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Forgive Me?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nailong-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ffccd5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nailong-image img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+            min-height: 60px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 55px;
+        }
+        
+        #yesBtn {
+            background: linear-gradient(to right, #4CAF50, #2E8B57);
+            color: white;
+            z-index: 10;
+        }
+        
+        #yesBtn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        #noBtn {
+            background: linear-gradient(to right, #FF5252, #FF4081);
+            color: white;
+            position: absolute;
+            transition: left 0.3s ease, top 0.3s ease;
+        }
+        
+        .apology-message {
+            display: none;
+            margin-top: 30px;
+            text-align: left;
+            background: #fff9f9;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .apology-message p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: fall 5s linear forwards;
+        }
+        
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+        }
+        
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            button {
+                padding: 12px 25px;
+                font-size: 1rem;
+                min-width: 100px;
+            }
+            
+            .nailong-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .nailong-image img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .apology-message {
+                padding: 15px;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Forgive Me?</h1>
+        
+        <div class="nailong-image">
+            <img src="https://nailongplushies.com/wp-content/uploads/2025/08/Nailong-Plush-Favicon.png" alt="Cute Nailong">
+        </div>
+        
+        <div class="buttons">
+            <button id="yesBtn">YES</button>
+            <button id="noBtn">NO</button>
+        </div>
+        
+        <div class="apology-message" id="apologyMessage">
+            <p>helloo baby if you're seeing this means u actually clicked on the link. yayy im proud and really happy!! try imagining that im the one speaking and in my tone.</p>
+            
+            <p>sorry for what i said yesterday and i owe u an apology. it really really pissed the shit out of you which i feel was valid. my reasoning and explanations does not matter because whatever i said hurt you yesterday.</p>
+            
+            <p>u always tell me howww much youloveme and obviousLYYY i know u onlyyy love me and yet when i said wtv i said ystd it was just rude of me to. i mean cmon SOMETIMES U LOOK AT ME IS JUST SOOO CUTE AND I CNNT STOP TKING OF WHEN I PIN UP YOUR HAIR AHH.</p>
+            
+            <p>anyway being serious! and yesterdays 'joke' just hurt your feelings if anything. it was kinda immature of me to say that actually it was rlly rlly immature of me to. but i mean i kinda still wanna do it. but timing as always is smthing i can never perfect even for myself.</p>
+            
+            <p>moving forward, ofc i can nvr promise i will stop it bcs i still want my fair share of pampering whenever i say this type of thing ehehehehe ( YOU ALWS TALK ABT MY STUFF OKAY BUT MINE IS 100X WORSE YA OKAY ) and it rlly is sometimes very cute for you to get mad. especially at my house.</p>
+            
+            <p>but i think id rather stick to making you 'angry' through other means especially for my own sake. right now im legit missingyou soo much and hoping you will unblock me :(( but u also have the right to be very mad lah.</p>
+            
+            <p>i think today you will probably be staying home especially if your eyes are swelled or mayb your blood is just simply boilingggg like shit. haighh why am i alws so retarded thinking saying any of that will turn out good tsk.</p>
+            
+            <p>ilovvu!! lotslotslots even though u wont want to say it for a week or wtv i still do iddcccc</p>
+        </div>
+        
+        <p class="instructions">Try hovering over the "NO" button...</p>
+        
+        <div class="hearts" id="hearts"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const apologyMessage = document.getElementById('apologyMessage');
+            const instructions = document.querySelector('.instructions');
+            const heartsContainer = document.getElementById('hearts');
+            const buttonsContainer = document.querySelector('.buttons');
+            
+            // Initial button positions
+            const initialBtnPosition = {
+                left: buttonsContainer.offsetWidth/2 + 20,
+                top: 0
+            };
+            
+            noBtn.style.left = initialBtnPosition.left + 'px';
+            noBtn.style.top = initialBtnPosition.top + 'px';
+            
+            // Function to move the No button
+            function moveButton() {
+                const containerRect = buttonsContainer.getBoundingClientRect();
+                
+                // Calculate random position within the button container
+                const maxX = containerRect.width - noBtn.offsetWidth;
+                const maxY = containerRect.height - noBtn.offsetHeight;
+                
+                const x = Math.random() * maxX;
+                const y = Math.random() * maxY;
+                
+                noBtn.style.left = `${x}px`;
+                noBtn.style.top = `${y}px`;
+            }
+            
+            // Function to create falling hearts
+            function createHearts() {
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.classList.add('heart');
+                        heart.innerHTML = '❤️';
+                        heart.style.left = Math.random() * 100 + '%';
+                        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                        heartsContainer.appendChild(heart);
+                        
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 5000);
+                    }, i * 100);
+                }
+            }
+            
+            // Add event listener to the No button
+            noBtn.addEventListener('mouseover', moveButton);
+            
+            // Add event listener to the Yes button
+            yesBtn.addEventListener('click', function() {
+                apologyMessage.style.display = 'block';
+                instructions.style.display = 'none';
+                yesBtn.style.display = 'none';
+                noBtn.style.display = 'none';
+                
+                // Create falling hearts
+                createHearts();
+                
+                // Change the title
+                document.querySelector('h1').textContent = 'Thank You!';
+            });
+        });
+    </script>
+</body>
+</html>
